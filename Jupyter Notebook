@@ -1,13 +1,17 @@
-welcome = print("Welcome to Python Proto. Signup!")
-name = input("What is your name? ")
-print("Nice to meet you " + name)
+# welcome = print("Welcome to Python Proto. Signup!")
+firstName = input("What is your first name? ")
+lastName = input("What is your last name? ")
+fullName = firstName + lastName
+print("Nice to meet you " + fullName)
 age = int(input("How old are you? "))
 
 if age < 13:
     print("Sorry your a bit to young! Try again when your older.")
 else:
     print("Your eligible to sign up " + name)
-    location = str(input("Where do you wish to go? " + "[  (C)ALCULATOR | (A)GE  ] "))
+    location = str(input("Where do you wish to go? " + "[  (C)ALCULATOR | (A)GE | (P)ROFILE ] "))
+    
+    # Calculator
     if location.upper() == "C":
         print("|Calculator Activated|")
 
@@ -32,8 +36,12 @@ else:
             div2 = int(input("Second Value: "))
             divsum = div1 / div2
             print("Sum: " + str(divsum))
-
+        else:
+            print("ERROR: INVALID VALUE")
+    # Age
     elif location.upper() == "A":
+        print("|Age Activated|")
+        print("|!NOTICE SEGMENT UNDER CONSTRUCTION!|")
         print(age)
         updateAge = input("Do you wish to update your age? SELECT: [  (Y)es | (N)o  ] ")
         if updateAge.upper() == "Y":
@@ -41,3 +49,16 @@ else:
             age.replace(newUpdateAge)
         elif updateAge.upper() == "N":
             print("Age is still the same")
+        else:
+            print("ERROR: INVALID VALUE")
+            
+    # Profile
+    elif location.upper() == "P":
+        print("|Profile Activated|")
+        def profileInfo(firstName, lastName, age):
+            print("First Name: " + firstName)
+            print("Last Name: " + lastName)
+            print("Full Name: " + fullName)
+            print("Age: " + age)
+    else:
+        print("ERROR: INVALID VALUE")
