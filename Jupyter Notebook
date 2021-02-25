@@ -1,1 +1,43 @@
-print("Wow")
+welcome = print("Welcome to Python Proto. Signup!")
+name = input("What is your name? ")
+print("Nice to meet you " + name)
+age = int(input("How old are you? "))
+
+if age < 13:
+    print("Sorry your a bit to young! Try again when your older.")
+else:
+    print("Your eligible to sign up " + name)
+    location = str(input("Where do you wish to go? " + "[  (C)ALCULATOR | (A)GE  ] "))
+    if location.upper() == "C":
+        print("|Calculator Activated|")
+
+        typeCalculator = str(input("SELECT: [  ADD.(+) | SUB. (-) | MUL.(*) | DIV.(/)  ] "))
+        if typeCalculator == "+":
+            add1 = int(input("First Value: "))
+            add2 = int(input("Second Value: "))
+            addsum = add1 + add2
+            print("Sum: " + str(addsum))
+        if typeCalculator == "-":
+            sub1 = int(input("First Value: "))
+            sub2 = int(input("Second Value: "))
+            subsum = sub1 - sub2
+            print("Sum: " + str(subsum))
+        if typeCalculator == "*":
+            mul1 = int(input("First Value: "))
+            mul2 = int(input("Second Value: "))
+            mulsum = mul1 * mul2
+            print("Sum: " + str(mulsum))
+        if typeCalculator == "/":
+            div1 = int(input("First Value: "))
+            div2 = int(input("Second Value: "))
+            divsum = div1 / div2
+            print("Sum: " + str(divsum))
+
+    elif location.upper() == "A":
+        print(age)
+        updateAge = input("Do you wish to update your age? SELECT: [  (Y)es | (N)o  ] ")
+        if updateAge.upper() == "Y":
+            newUpdateAge = int(input("What is new age? "))
+            age.replace(newUpdateAge)
+        elif updateAge.upper() == "N":
+            print("Age is still the same")
